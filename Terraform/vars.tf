@@ -14,11 +14,11 @@ variable USER {
 }
 
 variable PUB_KEY {
-  default = "dovekey.pub"
+  default = "yes.pub"
 }
 
 variable PRIV_KEY {
-  default = "dovekey"
+  default = "yes"
 }
 
 variable MYIP {

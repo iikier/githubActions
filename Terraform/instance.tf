@@ -6,4 +6,23 @@ resource "aws_instance" "minikube" {
   tags = {
     Name = "Minikube-Instance"
   }
+
+  provisioner "file" {
+    source      = "web.sh"
+    destination = "/tmp/web.sh"
+  }
+
+  provisioner "remote-exec" {
+
+    inline = [
+      "chmod +x /tmp/web.sh",
+      "sudo /tmp/web.sh"
+    ]
+  }
+
+  connection {
+    user        = var.USER
+    private_key = file("yes")
+    host        = self.public_ip
+  }
 }
