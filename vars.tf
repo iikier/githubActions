@@ -9,16 +9,8 @@ variable "AMIS" {
   }
 }
 
-variable "USER" {
-  default = "ec2-user"
-}
-
-variable "PUB_KEY" {
-  default = "yes.pub"
-}
-
-variable "PRIV_KEY" {
-  default = "yes"
+variable "key_name" {
+  default = "actions"
 }
 
 variable "MYIP" {

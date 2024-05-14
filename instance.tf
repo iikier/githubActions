@@ -2,6 +2,7 @@ resource "aws_instance" "minikube" {
   ami                    = var.AMIS[var.REGION]
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.hlwrd_pub_1.id
+  key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.HelloWorld_SG.id]
 
   tags = {
