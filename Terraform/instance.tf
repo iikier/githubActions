@@ -19,10 +19,4 @@ resource "aws_instance" "minikube" {
       "sudo /tmp/web.sh"
     ]
   }
-
-  connection {
-    user        = var.USER
-    private_key = file("yes")
-    host        = self.public_ip
-  }
 }
