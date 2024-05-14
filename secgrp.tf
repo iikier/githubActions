@@ -1,7 +1,7 @@
 resource "aws_security_group" "HelloWorld_SG" {
   name        = "hello-world-sg"
   description = "Security for Hello World instance "
-  vpc_id = aws_vpc.vpc_helloWorld.id # Attach VPC
+  vpc_id      = aws_vpc.vpc_helloWorld.id # Attach VPC
 
   # Regra de entrada permitindo tráfego HTTP (porta 80)
   ingress {
